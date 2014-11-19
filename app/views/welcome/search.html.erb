@@ -1,0 +1,24 @@
+This is the search page, waiting...
+
+<div>
+  Right click anywhere and inspect element to see the javascript working. You'll need to hit the 'console' tab in your web inspector
+  </div>
+
+<div class="response"></div>
+
+<script>
+  
+  window.setInterval(function(){
+
+    console.log("check for data");
+
+    //send some ajax request to localhost
+
+    $.get( "/db_cache", function( data ) {
+      console.log("data is " + data);
+      $( ".response" ).html( data );
+      console.log("load was performed!")
+    });
+
+  }, 5000);
+</script>
